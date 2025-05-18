@@ -146,10 +146,10 @@ if __name__ == "__main__":
 
 '''
 def test():
-    m = 54
-    table = crear_tabla()
+    table = crear_tabla2()
     inv_table = crear_tabla_inversa(table)
-    
+    m = len(table)
+
     print(table)
     print(inv_table)
 
@@ -157,8 +157,10 @@ def test():
     a = 5
     b = 3
     
+    a_inv = inverso_multiplicativo(a, m)
+
     encriptado = encrypt(texto_simple, a, b, m, table, inv_table)
-    desencriptado = decrypt(encriptado, a, b, m, table, inv_table)
+    desencriptado = decrypt(encriptado, a_inv, b, m, table, inv_table)
     
     print("Texto Original: ", texto_simple)
     print("Encriptado: ", encriptado)
